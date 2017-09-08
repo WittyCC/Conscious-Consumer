@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-//    private Button mFindItemButton;
+    public static final String TAG = MainActivity.class.getSimpleName();
+    private EditText mSearchItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +22,15 @@ public class MainActivity extends AppCompatActivity {
         Button left = (Button) findViewById(R.id.aboutButton);
         Button right = (Button) findViewById(R.id.profileButton);
 
+        mSearchItem = (EditText) findViewById(R.id.searchForm);
+
         center.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Welcome to Conscious Consumer", Toast.LENGTH_LONG).show();
+                String itemsearch = mSearchItem.getText().toString();
+                Log.d(TAG, itemsearch);
+                Intent intent = new Intent(MainActivity.this, SearchResultActivity.class);
+                startActivity(intent);
                 }
         });
 
