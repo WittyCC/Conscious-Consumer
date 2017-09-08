@@ -62,6 +62,7 @@
         android:ems="10"
         android:padding="5dp"
         android:inputType="textCapCharacters"
+        android:gravity="center"
         android:hint="What are you looking for?"
         android:layout_above="@+id/findItemButton"
         android:layout_centerHorizontal="true" />
