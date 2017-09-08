@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 String itemsearch = mSearchItem.getText().toString();
                 Log.d(TAG, itemsearch);
                 Intent intent = new Intent(MainActivity.this, SearchResultActivity.class);
+                intent.putExtra("itemsearch", itemsearch);
                 startActivity(intent);
                 }
         });
